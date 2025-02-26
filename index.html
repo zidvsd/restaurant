@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Savoré</title>
+  <link rel="icon" href="/assets/images/page-icon.png">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +22,7 @@
             "gray-darker": "#2b2b2b",
             "gray-darkest": "#1f1f1f",
             "gray-light": "#d9d9d9",
-            "red": "#ff6969",
+            "red": "#ff6868",
             "gray-medium": "#262626",
             "blue-gray": "#384a57",
             "gray-muted": "#b0b3b8",
@@ -57,7 +58,7 @@
 <body>
   <!-- navbar -->
   <header>
-    <div class="navbar bg-white container mx-auto">
+    <div class="navbar bg-white container mx-auto z-50">
       <!-- nav left -->
       <div class="navbar-start">
 
@@ -72,15 +73,22 @@
           <!-- menu on small screens -->
           <ul tabindex="0"
             class="menu menu-sm dropdown-content bg-green-bright rounded-box z-[1] mt-3 w-52 p-2 shadow text-white font-poppins">
-            <li><a class="">Item 1</a></li>
+            <li><a class="">Home</a></li>
             <li>
-              <a>Parent</a>
+              <a>Menu</a>
               <ul class="p-2">
                 <li><a>Submenu 1</a></li>
                 <li><a>Submenu 2</a></li>
               </ul>
             </li>
-            <li><a>Item 3</a></li>
+            <li><a>Offers</a></li>
+            <li>
+              <a>Services</a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
         <a class="btn btn-ghost text-3xl md:text-4xl lg:text-4xl flex items-center">
@@ -96,22 +104,22 @@
           <li>
             <details>
               <summary class="">Menu</summary>
-              <ul class="p-2 bg-green-bright text-white">
-                <li><a class="">Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
+              <ul class="p-2 bg-green-bright text-white z-50">
+                <li><a class="whitespace-nowrap">Submenu 1</a></li>
+                <li><a class="whitespace-nowrap">Submenu 2</a></li>
               </ul>
             </details>
           </li>
+          </li>
+          <li><a>Offers</a></li>
           <li>
             <details>
               <summary>Services</summary>
-              <ul class="p-2 bg-green-bright text-white">
-                <li><a class="">Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
+              <ul class="p-2 bg-green-bright text-white z-50">
+                <li><a class="whitespace-nowrap">Submenu 1</a></li>
+                <li><a class="whitespace-nowrap">Submenu 2</a></li>
               </ul>
             </details>
-          </li>
-          <li><a>Offers</a></li>
         </ul>
       </div>
       <!-- search icon -->
@@ -131,13 +139,136 @@
         <button
           class="btn rounded-badge bg-green-bright border-none hover:bg-green-bright hover:opacity-50 hover:text-inherit active:bg-green-bright focus:bg-green-bright">
           <img src="/assets/icons/phone.svg" alt="">
-          <a class="text-white font-light font-poppins">Contact</a>
+          <a class="text-white font-light font-poppins hidden md:block">Contact</a>
         </button>
 
       </div>
     </div>
   </header>
 
+  <!-- hero section -->
+  <section id="hero-section">
+    <!-- hero container -->
+    <div class="hero container mx-auto mt-4 relative overflow-hidden">
+      <!-- content container -->
+      <div class="w-full hero-content flex-col lg:flex-row-reverse text-center lg:text-left">
+        <!-- img container  -->
+        <div class="hero-img w-full relative">
+          <img src="/assets/images/hero-img.png" class="w-full hero-img" />
+          <!-- blob background -->
+          <svg class="absolute blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#52ED61"
+              d="M41.4,-67.2C53.4,-56.8,62.4,-44.7,70.1,-31.1C77.8,-17.4,84.2,-2.2,84.8,14.1C85.5,30.5,80.5,48,69.9,61C59.3,74.1,43.1,82.7,26.5,85.4C9.9,88.2,-7,84.9,-23.9,80.4C-40.8,75.9,-57.5,70.2,-66,58.3C-74.4,46.5,-74.4,28.6,-76.1,11.5C-77.7,-5.7,-81,-22.1,-76.4,-36C-71.8,-49.9,-59.2,-61.3,-45.2,-70.7C-31.1,-80,-15.6,-87.4,-0.4,-86.8C14.8,-86.2,29.5,-77.6,41.4,-67.2Z"
+              transform="translate(100 100)" />
+          </svg>
+          <!-- hero cards -->
+          <div
+            class="hidden  gap-x-12 w-full items-center justify-center font-inter font-semibold md:flex  md:flex-row">
+            <!-- first card -->
+            <div class="food-card text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
+              <img src="/assets/thumbnails/spicy-noodles.png" alt="" class="rounded-xl object-cover">
+              <!-- card description wrapper -->
+              <div class="flex flex-col items-start gap-y-2">
+                <h1>Spicy noodles</h1>
+                <img src="/assets/icons/3-stars.svg" alt="">
+                <p><span class="font-red">&#x24;</span> 18.00 </p>
+              </div>
+            </div>
+            <div class="food-card text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
+              <img src="/assets/thumbnails/vegetarian-salad.png" alt="" class="rounded-xl object-cover">
+              <!-- card description wrapper -->
+              <div class="flex flex-col items-start gap-y-2">
+                <h1>Vegetarian Salad</h1>
+                <img src="/assets/icons/4-stars.svg" alt="">
+                <p><span class="font-red">&#x24;</span> 18.00 </p>
+              </div>
+            </div>
+            <!-- second card -->
+          </div>
+        </div>
+        <!-- text container -->
+        <div class="space-y-2 lg:space-y-6">
+          <h1 class="text-3xl font-inter md:text-4xl lg:text-5xl font-bold  text-black">Experience the Joy of
+            Exquisite
+            <span class="text-green-bright">Cuisine</span>
+          </h1>
+          <p class="py-6 text-black font-inter w-full break-words">
+            Every dish tells a tale of expert craftsmanship and culinary passion.
+            Savor every bite and embark on a journey of unforgettable flavors.
+          </p>
+          <!-- buttons container -->
+          <div class="flex flex-row items-center justify-center gap-x-4 lg:justify-start font-semibold font-inter">
+            <button
+              class="btn btn-primary rounded-full px-6 bg-green-bright border-none text-white hover:bg-green-bright hover:opacity-50">
+              Order Now
+            </button>
+            <button
+              class="text-black btn btn-primary bg-white border-none rounded-full hover:bg-white hover:opacity-50">
+              Watch Video
+            </button>
+            <svg
+              class="hidden rounded-full size-12 p-2 bg-white border shadow-md cursor-pointer hover:opacity-50 transition sm:block"
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-play-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- favorites section -->
+  <section id="favorites">
+    <div class="container mx-auto mt-12 px-4">
+      <div class="flex flex-col items-center justify-center gap-y-8 font-inter">
+        <h1 class="text-center text-red font-bold ">
+          CUSTOMER FAVORITES
+        </h1>
+        <h1 class="text-3xl font-inter md:text-4xl lg:text-5xl font-bold  text-center text-black ">
+          Popular Categories
+        </h1>
+        <!-- grid container -->
+        <div class="grid grid-cols-2 grid-rows-1 gap-4 w-full md:grid-cols-4 text-black md:gap-6 lg:gap-10">
+          <div class="food-card rounded-xl flex flex-col items-center justify-center p-4 ">
+            <div class="favorite-card-img-container  relative  flex items-center justify-center">
+              <img src="/assets/thumbnails/favorite-1.png" class="bg-green-pale rounded-full p-1 size-24 object-contain"
+                alt="">
+            </div>
+            <h1 class="font-semibold">Main Dish</h1>
+            (0 dishes)
+          </div>
+          <div class="food-card rounded-xl flex flex-col items-center justify-center p-4">
+            <div class="favorite-card-img-container  relative  flex items-center justify-center">
+              <img src="/assets/thumbnails/favorite-2.png" class="bg-green-pale rounded-full p-1 size-24 object-contain"
+                alt="">
+            </div>
+            <h1 class="font-semibold">Break Fast</h1>
+            (0 break fast )
+          </div>
+          <div class="food-card rounded-xl flex flex-col items-center justify-center p-4">
+            <div class="favorite-card-img-container  relative  flex items-center justify-center">
+              <img src="/assets/thumbnails/favorite-3.png" class="bg-green-pale rounded-full p-1 size-24 object-contain"
+                alt="">
+            </div>
+            <h1 class="font-semibold">Dessert</h1>
+            (0 dessert)
+          </div>
+          <div class="food-card rounded-xl flex flex-col items-center justify-center p-4">
+            <div class="favorite-card-img-container  relative  flex items-center justify-center">
+              <img src="/assets/thumbnails/favorite-4.png" class="bg-green-pale rounded-full p-1 size-24 object-contain"
+                alt="">
+            </div>
+            <h1 class="font-semibold">Browse All</h1>
+            (255 Items)
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

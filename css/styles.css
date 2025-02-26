@@ -12,3 +12,14 @@
 summary > :not(summary::after) {
   color: white;
 }
+.blob {
+  position: absolute;
+  width: 100%; /* Adjust size as needed */
+  z-index: -1; /* Send it behind the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.food-card {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
