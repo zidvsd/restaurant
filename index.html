@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale.0" />
   <title>Savoré</title>
   <link rel="icon" href="/assets/images/page-icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -162,10 +164,10 @@
               transform="translate(100 100)" />
           </svg>
           <!-- hero cards -->
-          <div
-            class="hidden  gap-x-12 w-full items-center justify-center font-inter font-semibold md:flex  md:flex-row">
+          <div class="hidden  gap-x-8 w-full items-center justify-center font-inter font-semibold md:flex  md:flex-row">
             <!-- first card -->
-            <div class="food-card text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
+            <div
+              class="food-card w-full text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
               <img src="/assets/thumbnails/spicy-noodles.png" alt="" class="rounded-xl object-cover">
               <!-- card description wrapper -->
               <div class="flex flex-col items-start gap-y-2">
@@ -174,7 +176,8 @@
                 <p><span class="font-red">&#x24;</span> 18.00 </p>
               </div>
             </div>
-            <div class="food-card text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
+            <div
+              class="food-card w-full text-black bg-white -mt-4 flex flex-row  justify-start gap-x-6 p-4 rounded-3xl">
               <img src="/assets/thumbnails/vegetarian-salad.png" alt="" class="rounded-xl object-cover">
               <!-- card description wrapper -->
               <div class="flex flex-col items-start gap-y-2">
@@ -224,7 +227,7 @@
   <section id="favorites">
     <div class="container mx-auto mt-12 px-4">
       <div class="flex flex-col items-center justify-center gap-y-8 font-inter">
-        <h1 class="text-center text-red font-bold ">
+        <h1 class="text-center text-red font-bold text-xs md:text-sm lg:text-base tracking-widest">
           CUSTOMER FAVORITES
         </h1>
         <h1 class="text-3xl font-inter md:text-4xl lg:text-5xl font-bold  text-center text-black ">
@@ -269,6 +272,180 @@
       </div>
     </div>
   </section>
+
+  <!-- special dishes section -->
+  <section id="special-dishes-section">
+    <!-- container -->
+    <div class="container mx-auto mt-12 px-4">
+      <!-- text heading container  -->
+      <div class="flex flex-col items-center justify-center gap-y-4 ">
+        <h1 class="text-center text-red font-bold text-xs md:text-sm lg:text-base tracking-widest">
+          SPECIAL DISHES
+        </h1>
+        <div class="w-full flex flex-col gap-y-6 justify-between items-center lg:flex-row lg:gap-y-0">
+          <h1 class="text-3xl w-full font-inter md:text-4xl lg:text-5xl font-bold text-black text-center lg:text-left">
+            Standout Dishes
+            <span class="hidden lg:inline"><br></span>
+            From Our Menu
+          </h1>
+          <div class="flex flex-row  gap-x-6">
+            <button id="prevSlideBtn"
+              class="flex items-center justify-center rounded-full size-14 bg-gray-white text-black text-4xl font-bold transition hover:opacity-50 duration-300 ease-in-out ">
+              <img src="/assets/icons/prev-btn.svg" alt="">
+            </button>
+            <button id="nextSlideBtn"
+              class="flex items-center justify-center rounded-full size-14 bg-green-bright text-white text-4xl font-bold transition hover:opacity-50 duration-300 ease-in-out">
+              <img src="/assets/icons/next-btn.svg" alt="">
+            </button>
+          </div>
+
+        </div>
+        <div class="swiper w-full mx-auto mt-8">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div
+              class="swiper-slide flex flex-col items-center justify-center shadow-xl border border-black border-opacity-10 relative  size-64 w-full rounded-3xl p-6 h-auto">
+              <img src="/assets/thumbnails/vegetarian-salad.png" class="rounded-full w-full " alt="">
+              <div
+                class="absolute top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-green-bright w-1/5 h-1/6 flex justify-center items-center">
+                <button class="heart-fill">
+                  <svg width="30" height="30" viewBox="-5 -5 34 34" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5 1.91653C16.3739 1.93405 15.2724 2.24839 14.3068 2.82781C13.3411 3.40722 12.5453 4.2312 12 5.21653C11.4546 4.2312 10.6589 3.40722 9.69323 2.82781C8.72753 2.24839 7.62604 1.93405 6.49999 1.91653C4.70493 1.99453 3.01369 2.77979 1.79577 4.10077C0.577848 5.42175 -0.0677617 7.17106 -1.11917e-05 8.96653C-1.11917e-05 13.5135 4.78599 18.4795 8.79999 21.8465C9.69621 22.5997 10.8293 23.0126 12 23.0126C13.1706 23.0126 14.3038 22.5997 15.2 21.8465C19.214 18.4795 24 13.5135 24 8.96653C24.0677 7.17106 23.4221 5.42175 22.2042 4.10077C20.9863 2.77979 19.295 1.99453 17.5 1.91653Z"
+                      fill="none" stroke="white" stroke-width="3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- food description -->
+              <div class="w-full  flex flex-col items-start justify-start gap-y-3 mt-4">
+                <h1 class="font-semibold font-inter text-black text-xl">Fattoush salad</h1>
+                <p class="font-inter text-md">Description of the item</p>
+                <div class="w-full flex flex-row justify-between items-center text-black">
+                  <p class="font-inter font-semibold text-xl"><span class="text-base text-red">&#36;</span>24.00</p>
+                  <div class="flex flex-row gap-x-2 items-center">
+                    <img src="/assets/icons/star.svg" alt="">
+                    <p class="font-inter font-semibold">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center shadow-xl border border-black border-opacity-10 relative  size-64 w-full rounded-3xl p-6 h-auto">
+              <img src="/assets/thumbnails/vegetarian-salad.png" class="rounded-full w-full " alt="">
+              <div
+                class="absolute top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-green-bright w-1/5 h-1/6 flex justify-center items-center">
+                <button class="heart-fill">
+                  <svg width="30" height="30" viewBox="-5 -5 34 34" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5 1.91653C16.3739 1.93405 15.2724 2.24839 14.3068 2.82781C13.3411 3.40722 12.5453 4.2312 12 5.21653C11.4546 4.2312 10.6589 3.40722 9.69323 2.82781C8.72753 2.24839 7.62604 1.93405 6.49999 1.91653C4.70493 1.99453 3.01369 2.77979 1.79577 4.10077C0.577848 5.42175 -0.0677617 7.17106 -1.11917e-05 8.96653C-1.11917e-05 13.5135 4.78599 18.4795 8.79999 21.8465C9.69621 22.5997 10.8293 23.0126 12 23.0126C13.1706 23.0126 14.3038 22.5997 15.2 21.8465C19.214 18.4795 24 13.5135 24 8.96653C24.0677 7.17106 23.4221 5.42175 22.2042 4.10077C20.9863 2.77979 19.295 1.99453 17.5 1.91653Z"
+                      fill="none" stroke="white" stroke-width="3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- food description -->
+              <div class="w-full  flex flex-col items-start justify-start gap-y-3 mt-4">
+                <h1 class="font-semibold font-inter text-black text-xl">Fattoush salad</h1>
+                <p class="font-inter text-md">Description of the item</p>
+                <div class="w-full flex flex-row justify-between items-center text-black">
+                  <p class="font-inter font-semibold text-xl"><span class="text-base text-red">&#36;</span>24.00</p>
+                  <div class="flex flex-row gap-x-2 items-center">
+                    <img src="/assets/icons/star.svg" alt="">
+                    <p class="font-inter font-semibold">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center shadow-xl border border-black border-opacity-10 relative  size-64 w-full rounded-3xl p-6 h-auto">
+              <img src="/assets/thumbnails/vegetarian-salad.png" class="rounded-full w-full " alt="">
+              <div
+                class="absolute top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-green-bright w-1/5 h-1/6 flex justify-center items-center">
+                <button class="heart-fill">
+                  <svg width="30" height="30" viewBox="-5 -5 34 34" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5 1.91653C16.3739 1.93405 15.2724 2.24839 14.3068 2.82781C13.3411 3.40722 12.5453 4.2312 12 5.21653C11.4546 4.2312 10.6589 3.40722 9.69323 2.82781C8.72753 2.24839 7.62604 1.93405 6.49999 1.91653C4.70493 1.99453 3.01369 2.77979 1.79577 4.10077C0.577848 5.42175 -0.0677617 7.17106 -1.11917e-05 8.96653C-1.11917e-05 13.5135 4.78599 18.4795 8.79999 21.8465C9.69621 22.5997 10.8293 23.0126 12 23.0126C13.1706 23.0126 14.3038 22.5997 15.2 21.8465C19.214 18.4795 24 13.5135 24 8.96653C24.0677 7.17106 23.4221 5.42175 22.2042 4.10077C20.9863 2.77979 19.295 1.99453 17.5 1.91653Z"
+                      fill="none" stroke="white" stroke-width="3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- food description -->
+              <div class="w-full  flex flex-col items-start justify-start gap-y-3 mt-4">
+                <h1 class="font-semibold font-inter text-black text-xl">Fattoush salad</h1>
+                <p class="font-inter text-md">Description of the item</p>
+                <div class="w-full flex flex-row justify-between items-center text-black">
+                  <p class="font-inter font-semibold text-xl"><span class="text-base text-red">&#36;</span>24.00</p>
+                  <div class="flex flex-row gap-x-2 items-center">
+                    <img src="/assets/icons/star.svg" alt="">
+                    <p class="font-inter font-semibold">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center shadow-xl border border-black border-opacity-10 relative  size-64 w-full rounded-3xl p-6 h-auto">
+              <img src="/assets/thumbnails/vegetarian-salad.png" class="rounded-full w-full " alt="">
+              <div
+                class="absolute top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-green-bright w-1/5 h-1/6 flex justify-center items-center">
+                <button class="heart-fill">
+                  <svg width="30" height="30" viewBox="-5 -5 34 34" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5 1.91653C16.3739 1.93405 15.2724 2.24839 14.3068 2.82781C13.3411 3.40722 12.5453 4.2312 12 5.21653C11.4546 4.2312 10.6589 3.40722 9.69323 2.82781C8.72753 2.24839 7.62604 1.93405 6.49999 1.91653C4.70493 1.99453 3.01369 2.77979 1.79577 4.10077C0.577848 5.42175 -0.0677617 7.17106 -1.11917e-05 8.96653C-1.11917e-05 13.5135 4.78599 18.4795 8.79999 21.8465C9.69621 22.5997 10.8293 23.0126 12 23.0126C13.1706 23.0126 14.3038 22.5997 15.2 21.8465C19.214 18.4795 24 13.5135 24 8.96653C24.0677 7.17106 23.4221 5.42175 22.2042 4.10077C20.9863 2.77979 19.295 1.99453 17.5 1.91653Z"
+                      fill="none" stroke="white" stroke-width="3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- food description -->
+              <div class="w-full  flex flex-col items-start justify-start gap-y-3 mt-4">
+                <h1 class="font-semibold font-inter text-black text-xl">Fattoush salad</h1>
+                <p class="font-inter text-md">Description of the item</p>
+                <div class="w-full flex flex-row justify-between items-center text-black">
+                  <p class="font-inter font-semibold text-xl"><span class="text-base text-red">&#36;</span>24.00</p>
+                  <div class="flex flex-row gap-x-2 items-center">
+                    <img src="/assets/icons/star.svg" alt="">
+                    <p class="font-inter font-semibold">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center shadow-xl border border-black border-opacity-10 relative  size-64 w-full rounded-3xl p-6 h-auto">
+              <img src="/assets/thumbnails/vegetarian-salad.png" class="rounded-full w-full " alt="">
+              <div
+                class="absolute top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-green-bright w-1/5 h-1/6 flex justify-center items-center">
+                <button class="heart-fill">
+                  <svg width="30" height="30" viewBox="-5 -5 34 34" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5 1.91653C16.3739 1.93405 15.2724 2.24839 14.3068 2.82781C13.3411 3.40722 12.5453 4.2312 12 5.21653C11.4546 4.2312 10.6589 3.40722 9.69323 2.82781C8.72753 2.24839 7.62604 1.93405 6.49999 1.91653C4.70493 1.99453 3.01369 2.77979 1.79577 4.10077C0.577848 5.42175 -0.0677617 7.17106 -1.11917e-05 8.96653C-1.11917e-05 13.5135 4.78599 18.4795 8.79999 21.8465C9.69621 22.5997 10.8293 23.0126 12 23.0126C13.1706 23.0126 14.3038 22.5997 15.2 21.8465C19.214 18.4795 24 13.5135 24 8.96653C24.0677 7.17106 23.4221 5.42175 22.2042 4.10077C20.9863 2.77979 19.295 1.99453 17.5 1.91653Z"
+                      fill="none" stroke="white" stroke-width="3" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- food description -->
+              <div class="w-full  flex flex-col items-start justify-start gap-y-3 mt-4">
+                <h1 class="font-semibold font-inter text-black text-xl">Fattoush salad</h1>
+                <p class="font-inter text-md">Description of the item</p>
+                <div class="w-full flex flex-row justify-between items-center text-black">
+                  <p class="font-inter font-semibold text-xl"><span class="text-base text-red">&#36;</span>24.00</p>
+                  <div class="flex flex-row gap-x-2 items-center">
+                    <img src="/assets/icons/star.svg" alt="">
+                    <p class="font-inter font-semibold">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
