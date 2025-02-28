@@ -20,6 +20,15 @@ summary > :not(summary::after) {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.blob-2 {
+  position: absolute;
+  width: 80%; /* Adjust size as needed */
+  z-index: -1; /* Send it behind the image */
+  top: 60%;
+  transform: scale(2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .food-card {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
